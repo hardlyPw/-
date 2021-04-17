@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-SceneID startScene, background, HD, ND, SD;
-ObjectID start, end, money_art, turn, X, X2, X3, money_change,money_change2, howbox, how,arrow,
+SceneID startScene, background, background_end,  restart;
+ObjectID start, end, end2, money_art, turn, X, X2, X3, money_change,money_change2, howbox, how,arrow, HD, ND, SD,
 one, two, three, four, five, six, seven, eight, nine, zero, //일의 자리
 one_0, two_0, three_0, four_0, five_0, six_0, seven_0, eight_0, nine_0, zero_0, //십의자리
 one_00, zero_00, two_00,//백의 자리
 tuza_0, tuza_00, tuza_10, tuza_20, tuza_30, tuza_40, tuza_50, tuza_60, tuza_70, // 투자 금액 보여주기
 plus_nexen, minus_nexen, plus_koogle, minus_koogle, plus_nanosoft, minus_nanosoft, //플러스 마이너스
-nexen, koogle, nanosoft,//기업 간판
+nexen, koogle, nanosoft,//기업 로고 
 day_1, day_2, day_3, //1일차, 2일차, 3일차
 ban_1, ban_3,//상한선 표시
 minus_check, have_check,
@@ -32,7 +32,7 @@ ObjectID createObject(const char* image, SceneID scene, int x, int y, bool shown
     }
     return object;
 }
-void random_def() {
+void random_def() { //주가 변동 확률 섞기
     srand((unsigned int)time(NULL));
     R_nexen = rand() % 2;
     R_koogle = rand() % 2;
@@ -225,7 +225,7 @@ void hide_tuza() { //투자금액 숨기기
     hideObject(tuza_60);
     hideObject(tuza_70);
 }
-void hide_PMbutton() {
+void hide_PMbutton() { //플마 버튼 숨기기
     hideObject(plus_koogle);
     hideObject(plus_nanosoft);
     hideObject(plus_nexen);
@@ -278,7 +278,28 @@ void tuza_C() { //투자금액 확인
         showObject(tuza_70);
     }
 }
-
+void restart_function() { //재시작 함수
+    enterScene(startScene);
+    money = 50, tuza = 0, tuza_nexen = 0, tuza_koogle = 0, tuza_nanosoft = 0, day_check = 1;
+    money_C();
+    money_C10();
+    money_C100();
+    hideObject(money_change2);
+    hideObject(arrow);
+    hideObject(nexen3);
+    hideObject(nexen3G);
+    hideObject(koogle3);
+    hideObject(koogle3B);
+    hideObject(nano3);
+    hideObject(nano3G);
+    showObject(nanosoft);
+    show_PMbutton();
+    hideObject(day_3);
+    showObject(day_1);
+    showObject(turn);
+    show_news_button();
+    showObject(ban_1);
+}
 
 void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
     if (object == start) {
@@ -289,6 +310,9 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
         random_def();
     }
     else if (object == end) {
+        endGame();
+    }
+    else if (object == end2) {
         endGame();
     }
     else if (object == howbox) {
@@ -577,12 +601,14 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
     show_news_button();
     hide_news();
     hideObject(X);
+    showObject(turn);
     }
     else if (object == X2) {
     hide_change();
+    showObject(turn);
 }
     else if (object == turn) {
-    
+    hideObject(turn);
         if (day_check == 1) {
             hide();
             hide_1();
@@ -691,20 +717,27 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
         day_check = day_check + 1;
     }
     else if (object == arrow) {
+    enterScene(background_end);
+    hideObject(SD);
+    hideObject(ND);
+    hideObject(HD);
         if (money <= 50) {
-            enterScene(SD);
+            showObject(SD);
             showMessage("난 결국 돈을 많이 벌지 못했다..(새드엔딩)");
         }
-        else if (money > 50 and money <= 150) {
-            enterScene(ND);
+        else if (money > 50 and money <= 120) {
+            showObject(ND);
             showMessage("그럭저럭 돈을 잘 번것 같다...(노말엔딩)");
         }
         else {
-            enterScene(HD);
+            showObject(HD);
             showMessage("당신은 투자의 귀재! 돈을 정말 많이 벌었다! (해피엔딩)");
         }
 
     }
+    else if (object == restart) {
+    restart_function();
+}
 }
 
 
@@ -712,9 +745,15 @@ int main() {
     setMouseCallback(mouseCallback);
 	startScene = createScene("주식게임", "시작화면.png");
     background = createScene("주식게임", "배경.png");
-    HD = createScene("해피엔딩", "HD.jpg");
-    ND = createScene("노말엔딩", "ND.jpg");
-    SD = createScene("새드엔딩", "SD.jpg");
+    background_end = createScene("엔딩", "black.png");
+    //엔딩 종류
+    HD = createObject("HD.jpg", background_end, 200, 000, false);
+    ND = createObject("ND.jpg", background_end, 200, 00, false);
+    SD = createObject("SD.png", background_end, 200, 70, false);
+    scaleObject(SD, 2.4f);
+    scaleObject(HD, 0.7f);
+    scaleObject(ND, 2.5f);
+
     turn = createObject("턴.png", background, 1300, 350, true);
     money_art = createObject("동전.png", background, 420, 630, true);
     scaleObject(money_art, 0.3f);
@@ -813,7 +852,7 @@ int main() {
     scaleObject(news_nano_3, 1.1f);
     scaleObject(news_nexen_1B, 1.1f);
     scaleObject(news_nexen_1G, 1.1f);
-    scaleObject(news_nexen_2B, 1.1f);
+    scaleObject(news_nexen_2B, 1.1f);   
     scaleObject(news_nexen_2G, 1.1f);
     scaleObject(news_nexen_3, 1.1f);
 
@@ -839,6 +878,10 @@ int main() {
     X2 = createObject("X.png", background, 380, 580, false);
     start = createObject("start.png", startScene, 100, 100, true);
     end = createObject("end.png", startScene, 100, 50, true);
+    end2=createObject("end.png", background_end, 1300, 150, true);
+    restart = createObject("restart.png", background_end, 1300, 210, true);
+    scaleObject(end2, 1.2f);
+    scaleObject(restart, 1.2f);
 	startGame(startScene);
 
 

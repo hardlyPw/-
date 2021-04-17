@@ -1,14 +1,14 @@
 ﻿  stock.cpp
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(611,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(614,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(619,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(622,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(627,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(630,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(657,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(660,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(665,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(668,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(673,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(676,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(637,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(640,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(645,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(648,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(653,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(656,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(683,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(686,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(691,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(694,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(699,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Lee hyo geun\source\repos\stock\stock\stock.cpp(702,35): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   stock.vcxproj -> C:\Users\Lee hyo geun\source\repos\stock\Debug\stock.exe
